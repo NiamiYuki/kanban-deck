@@ -28,6 +28,7 @@ function CardMenu(props){
     }
 
     const handleMoveCard=(isCardToMove,indexCardListToMove,cardContent)=>{
+        console.log(isCardToMove,indexCardListToMove,cardContent);
         props.handleCardMove(isCardToMove,indexCardListToMove,cardContent);
         props.handleCardRemove(props.cardIndex)
     }
@@ -52,7 +53,7 @@ function CardMenu(props){
                 <Submenu label="Переместить карточку">
                     <div onMouseEnter={()=>handleAddCardGroupTitleToList()}>
                         {cardGroupList.map((cardGroup,index)=>
-                            <Item onClick={()=>handleMoveCard(true,props.cardIndex,props.card.cardTitle)}>
+                            <Item onClick={()=>handleMoveCard(true,index,props.card.cardTitle)}>
                                 {cardGroup.cardGroupTitle}
                             </Item>)}
                     </div>
