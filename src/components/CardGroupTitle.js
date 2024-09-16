@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import styles from '../containers/CardGroupView.module.css'
+// import styles from '../containers/CardGroupView.module.css'
+import styles from './CardGroupTitle.module.css'
 
 function CardGroupTitle(props){
 
