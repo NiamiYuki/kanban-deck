@@ -1,17 +1,23 @@
 import React, {useState} from "react";
 import styles from './CardGroupView.module.css'
 import { FaEdit } from "react-icons/fa";
-import { FaPaw } from "react-icons/fa";
+
+import Card from '../components/Card';
 
 function CardGroupView(){
 
     const [cardList, setCardList] = useState([]);
-    const [newCard, setNewCard] = useState();
     const [newCardGroupTitle, setNewCardGroupTitle] = useState();
     const [isCardTitleChange, setIsCardTitleChange] = useState('true');
-    const [isActiveCardArea, setIsActivCardArea] = useState();
+    const [newCard, setNewCard] = useState();
 
-
+    const handleCardRemove  = (e,index) => {
+        e.preventDefault();
+        const newList = [...cardList];
+        // console.log(newList[index],index);
+        newList.splice(index, 1)
+        setCardList(newList);  
+    }
 
     // //
     // const textarea = document.getElementsByClassName('textarea');
@@ -25,10 +31,6 @@ function CardGroupView(){
     //     }
     // //
 
-    const handleIsCardAreaActive = (value) => {
-        setIsActivCardArea(value);
-        console.log(isActiveCardArea);
-    }
 
     // const handleTextAreaOnMouseOut = (e) => {
     //     setIsActivCardArea('false');
@@ -52,29 +54,21 @@ function CardGroupView(){
         setIsCardTitleChange(true);
     } 
 
-    const handleCardAdd = (e) => {
+    const handleCardAdd = (e, props) => {
         e.preventDefault();
         if (!newCard) return;
          else {
             setCardList([...cardList, {cardTitle: newCard}]);
             setNewCard('');
         }  
+        // console.log(props);
     }
 
     const handleChange = (e,index) => {
         const {value} = e.target;
         setNewCard(value);
     }  
-
-    const handleCardRemove  = (e,index) => {
-        e.preventDefault();
-        const newList = [...cardList];
-        console.log(newList[index],index);
-        newList.splice(index, 1)
-        setCardList(newList);
-        
-    }
-    
+   
     return(
     <div className={styles.container}>
         <form>
@@ -99,41 +93,28 @@ function CardGroupView(){
                 </div>
                 <div  className={styles.cardList}>
                 <div>
-                {cardList.map((card,index)=>(
-                    <div                             
-                    onMouseEnter={()=>handleIsCardAreaActive(true)}
-                    onMouseLeave={()=>handleIsCardAreaActive(false)}
-                    >
-                        <div key={index} className={styles.cardContainer}  >
-                            <div className={styles.card}>
-                                {card.cardTitle} 
-                            </div>
-                                {isActiveCardArea && <button onClick={(e)=>handleCardRemove(e,index)} className={styles.removeCardButton}>
-                                 <FaPaw/>
-                                 </button>}
-                               
-                        </div> 
-                    </div>
-                    ))}
-                    </div>
+                    {cardList.map((card,index)=>(
+                    <Card index={index} card={card} cardList={[cardList]} handleCardRemove={handleCardRemove}/>))}
+                </div>
                     <div className={styles.addCardGroup}>
-                                    <textarea
-                                        type='text' 
-                                        name='cardTitle' 
-                                        placeholder='Название карточки' 
-                                        value={newCard}
-                                        className={styles.cardInput}
-                                        onChange={(e) => handleChange(e)}>
-                                    </textarea>
-                                    <button 
-                                        onClick={(e) => handleCardAdd(e)} className={styles.addCardButton}>
-                                        Добавить карточку
-                                     </button>
-                                </div>
-                                </div> 
+                            <textarea
+                                type='text' 
+                                name='cardTitle' 
+                                placeholder='Название карточки' 
+                                value={newCard}
+                                className={styles.cardInput}
+                                onChange={(e) => handleChange(e)}>
+                            </textarea>
+                            <button 
+                                onClick={(e) => handleCardAdd(e)} className={styles.addCardButton}>
+                                Добавить карточку
+                            </button>
+                    </div>
+                 </div> 
             </div>
         </form>
     </div>
+    
     );
 }
 

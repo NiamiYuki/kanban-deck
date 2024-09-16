@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import CardGroupView from './components/CardGroupView'
+import CardGroupView from './containers/CardGroupView'
 import './App.css';
 
 function App() {
