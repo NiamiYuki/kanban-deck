@@ -5,6 +5,7 @@ import CardMenu from './CardMenu';
 
 function Card(props){
     const [isActiveCardArea, setIsActivCardArea] = useState();
+    console.log('rendering card', props)
 
 
     const handleIsCardAreaActive = (value) => {
@@ -32,7 +33,6 @@ return(
                     className={styles.moveCardTitleMenu}
                     cardIndex={props.cardIndex} 
                     card={props.card} 
-                    cardList={props.cardList} 
                     cardGroup={props.cardGroup}
                     cardGroupList={props.cardGroupList}
                     isActiveCardArea={isActiveCardArea}
@@ -45,6 +45,6 @@ return(
             </div>
         </div> 
     </div>
-)
+    )
 }
 export default Card;

@@ -6,35 +6,34 @@ import Card from '../components/Card';
 import CardGroupTitle from "../components/CardGroupTitle";
 
 function CardGroupView(props){
-    // console.log(props);
-
-    const [cardList, setCardList] = useState([]);
+    const [, setState] = React.useState(false);
     const [newCard, setNewCard] = useState();
     
 
     const handleCardRemove  = (e,index) => {
-        // e.preventDefault();
-        const newList = [...cardList];
-        newList.splice(index, 1)
-        setCardList(newList);  
-         
+        const newList = [...props.cardGroup.cardList];
+        newList.splice(index, 1);
+        props.cardGroup.cardList = newList;
+        setState((prev) => !prev);
+        setNewCard('');
+        console.log(props.cardGroup.cardList);  
      }
 
     const handleCardMove = () =>{
         props.setIsCardToMove(true);
-        console.log(props.cardGroupList, props.index, props.isCardToMove, cardList);
     }
 
-    const handleCardAdd = (e, props) => {
+    const handleCardAdd = (e) => {
         e.preventDefault();
         if (!newCard) return;
          else {
-            setCardList([...cardList, {cardTitle: newCard}]);
+            props.cardGroup.cardList.push({cardTitle: newCard});
+            setState((prev) => !prev);
             setNewCard('');
-        }  
+        }   
     }
 
-    const handleChange = (e,index) => {
+    const handleChange = (e) => {
         const {value} = e.target;
         setNewCard(value);
     }  
@@ -52,14 +51,13 @@ function CardGroupView(props){
                 </div>
                 <div  className={styles.cardList}>
                     <div className={styles.cardRow}>
-                        {cardList.map((card,index)=>(
+                        {props.cardGroup.cardList.map((card,index)=>(
                         <Card 
                             isCardToMove={props.isCardToMove}
                             setIsCardToMove={props.setIsCardToMove}
                             cardGroupIndex={props.index} 
                             cardIndex={index} 
                             card={card} 
-                            cardList={[cardList]} 
                             handleCardRemove={handleCardRemove}
                             handleCardMove={handleCardMove}
                             cardGroup={props.cardGroup}
