@@ -13,7 +13,7 @@
 }
 .leftContainer{
     flex: 0 0 100px;
-    background-color: chocolate;/
+    background-color: chocolate;
 }
 .mainAndLeftContainer{
     position: relative;
