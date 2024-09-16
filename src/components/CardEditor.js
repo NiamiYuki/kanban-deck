@@ -26,6 +26,7 @@ function CardEditor(props){
 
     return(
         <div  className={styles.editorContainer}>
+            <button className={styles.editorClose} onClick={() => handleCloseModal()}>X</button>
             <textarea 
                 className={styles.cardEditorTextareaTitle}
                 value={newCardTitle}

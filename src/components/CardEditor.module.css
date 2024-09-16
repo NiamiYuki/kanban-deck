@@ -56,3 +56,12 @@
     color:#99a1b0;
     box-shadow:  1px 1px 0px 0px rgba(0,0,0,0.2);
 }
+.editorClose{
+    align-self: flex-end;
+    border: none;
+    background-color: transparent;
+    color:#99a1b0; 
+}
+.editorClose:hover{
+    color:black; 
+}

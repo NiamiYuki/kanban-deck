@@ -11,12 +11,16 @@
     background-color: #1360a6;
     flex: 0 0 50px;
     border-bottom: 1px solid #36b2c4;
+    color: white;
+    padding-left: 5px;
+    padding-top: 5px;
     /* box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2); */
 }
 .leftContainer{
     flex: 0 0 100px;
     background-color: #0c57b9;
     border-right: 1px solid #36b2c4;
+    color: white;
     /* box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.2); */
 }
 .mainAndLeftContainer{

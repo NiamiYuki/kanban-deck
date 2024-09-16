@@ -1,5 +1,7 @@
 import React, {useState} from "react";
-import styles from './Container.module.css'
+import styles from './Container.module.css';
+import { GiOctopus} from "react-icons/gi";
+
 
 import CardGroupView from './CardGroupView';
 function Container(){
@@ -25,7 +27,7 @@ function Container(){
 
      return(
         <div className={styles.mainScreen} id='mainScreen'>
-            <div className={styles.topContainer}>  </div>
+            <div className={styles.topContainer}> <GiOctopus size={70}/> </div>
             <div className={styles.mainAndLeftContainer}>
                 <div className={styles.leftContainer}> </div>
                 <div className={styles.rightContainer}>
