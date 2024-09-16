@@ -11,8 +11,8 @@ function Container(){
        setCardGroupList([...cardGroupList, {cardGroupTitle:'Название колонки', cardList:[]}]);
     }
 
-   const handleCardMove = (isCardToMove,indexCardListToMove,cardContent) =>{
-        cardGroupList[indexCardListToMove].cardList.push({cardTitle: cardContent});
+   const handleCardMove = (isCardToMove,indexCardListToMove,card) =>{
+        cardGroupList[indexCardListToMove].cardList.push({cardTitle:card.cardTitle, cardContent:card.cardContent});
         setState((prev) => !prev);
     }
 
