@@ -6,11 +6,12 @@ import Card from '../components/Card';
 import CardGroupTitle from "../components/CardGroupTitle";
 
 function CardGroupView(props){
+    console.log(props.cardGroup)
     const [, setState] = React.useState(false);
     const [newCard, setNewCard] = useState();
     
 
-    const handleCardRemove  = (e,index) => {
+    const handleCardRemove  = (index) => {
         const newList = [...props.cardGroup.cardList];
         newList.splice(index, 1);
         props.cardGroup.cardList = newList;

@@ -14,8 +14,8 @@ function CardGroupTitle(props){
     }
 
     const handleCardGroupTitleChange = (e, index)=>{
+        console.log(index);
         props.updateCardGroupTitle(index, e.target.value);
-        // console.log(props.cardGroup.cardGroupTitle);
     }
 
     const handleCardTitleEdit = (e)=>{
@@ -32,15 +32,15 @@ return(
             name='listTitle' 
             placeholder='название списка'
             value={props.cardGroup.cardGroupTitle}
-            onChange={(e)=>handleCardGroupTitleChange(e, props.index)}
-            onKeyDown={(e)=>handleCardGroupTitleAdd(e, props.index)}>
+            onChange={(e)=>handleCardGroupTitleChange(e, props.cardGroupIndex)}
+            onKeyDown={(e)=>handleCardGroupTitleAdd(e, props.cardGroupIndex)}>
          </textarea>}
             {!isCardTitleChange && 
             <div className={styles.cardTitle}>
                 <div className={styles.cardTitleText}>{props.cardGroup.cardGroupTitle}</div>
                 <button 
                     className={styles.cardTitleEditButton} 
-                    onClick={(e)=>handleCardTitleEdit(e, props.index)}> 
+                    onClick={(e)=>handleCardTitleEdit(e, props.cardGroupIndex)}> 
                     Редактировать {String.fromCharCode(9998)}
                  </button>
             </div>}

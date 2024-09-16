@@ -18,7 +18,8 @@ function Container(){
 
     const updateCardGroupTitle= (index, newTitle)=>{
         const newCardGroupList=[...cardGroupList];
-        newCardGroupList.splice(index,1, {cardGroupTitle:newTitle});
+        console.log(newCardGroupList, index);
+        newCardGroupList[index].cardGroupTitle = newTitle;
         setCardGroupList(newCardGroupList);
     }
 
