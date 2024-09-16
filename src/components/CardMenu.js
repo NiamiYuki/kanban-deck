@@ -28,6 +28,11 @@ function CardMenu(props){
         // console.log(props);
     }
 
+    const handleMoveCard=(isCardToMove,indexCardListToMove,cardContent)=>{
+        props.handleCardMove(isCardToMove,indexCardListToMove,cardContent);
+        props.handleCardRemove(props.cardIndex)
+    }
+
     function displayMenu(e){
         // props.handleIsCardAreaActive(!props.isActiveCardArea);
         // put whatever custom logic you need
@@ -48,7 +53,7 @@ function CardMenu(props){
                 <Submenu label="Переместить карточку">
                     <div onMouseEnter={()=>handleAddCardGroupTitleToList()}>
                         {cardGroupList.map((cardGroup,index)=>
-                            <Item onClick={(e)=>props.handleCardMove(e)}>
+                            <Item onClick={()=>handleMoveCard(true,index,props.card.cardTitle)}>
                                 {cardGroup.cardGroupTitle}
                             </Item>)}
                     </div>

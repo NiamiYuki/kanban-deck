@@ -5,7 +5,6 @@ import CardMenu from './CardMenu';
 
 function Card(props){
     const [isActiveCardArea, setIsActivCardArea] = useState();
-    console.log('rendering card', props)
 
 
     const handleIsCardAreaActive = (value) => {
@@ -28,8 +27,8 @@ return(
             <div className={styles.cardDropdown}>
                     <div className={styles.cardMenu}>
                     <CardMenu
-                    isCardToMove={props.isCardToMove}
-                    setIsCardToMove={props.setIsCardToMove}
+                    сardToMove={props.сardToMove}
+                    setCardToMove={props.setCardToMove}
                     className={styles.moveCardTitleMenu}
                     cardIndex={props.cardIndex} 
                     card={props.card} 

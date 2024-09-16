@@ -5,10 +5,15 @@ import CardGroupView from './CardGroupView';
 function Container(){
 
     const [cardGroupList, setCardGroupList] = useState([{cardGroupTitle:'Название колонки', cardList:[]}]);
-    const [isCardToMove, setIsCardToMove] = useState(false);
+    const [, setState] = React.useState(false);
     
     const handleAddCardGroup = ()=> {
        setCardGroupList([...cardGroupList, {cardGroupTitle:'Название колонки', cardList:[]}]);
+    }
+
+   const handleCardMove = (isCardToMove,indexCardListToMove,cardContent) =>{
+        cardGroupList[indexCardListToMove].cardList.push({cardTitle: cardContent});
+        setState((prev) => !prev);
     }
 
     const updateCardGroupTitle= (index, newTitle)=>{
@@ -26,13 +31,12 @@ function Container(){
                     <div className={styles.rowsContainer} >
                         {cardGroupList.map((cardGroup,index)=>(
                         <CardGroupView  
-                            isCardToMove={isCardToMove}
-                            setIsCardToMove={setIsCardToMove}
                             index={index} 
                             cardGroup={cardGroup}
                             updateCardGroupTitle={updateCardGroupTitle}
                             cardGroupList={cardGroupList}
                             setCardGroupList={setCardGroupList}
+                            handleCardMove={handleCardMove}
                         />))}
                     <button onClick={() => handleAddCardGroup()} className={styles.addCardGroupButton}>
                         Добавить колонку
