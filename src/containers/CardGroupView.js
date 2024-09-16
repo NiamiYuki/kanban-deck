@@ -24,7 +24,7 @@ function CardGroupView(props){
         e.preventDefault();
         if (!newCard) return;
          else {
-            props.cardGroup.cardList.push({cardTitle: newCard});
+            props.cardGroup.cardList.push({cardTitle: newCard, cardContent:''});
             setState((prev) => !prev);
             setNewCard('');
         }   

@@ -58,6 +58,7 @@ function CardMenu(props){
                             </Item>)}
                     </div>
                 </Submenu>
+                <Item onClick={()=>props.portal(true)}>Редактировать карточку</Item>
                 <Item onClick={()=>props.handleCardRemove(props.cardIndex)}>Удалить карточку</Item>
             </Menu>
         </div>

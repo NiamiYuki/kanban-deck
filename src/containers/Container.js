@@ -18,13 +18,13 @@ function Container(){
 
     const updateCardGroupTitle= (index, newTitle)=>{
         const newCardGroupList=[...cardGroupList];
-        console.log(newCardGroupList, index);
+        // console.log(newCardGroupList, index);
         newCardGroupList[index].cardGroupTitle = newTitle;
         setCardGroupList(newCardGroupList);
     }
 
      return(
-        <div className={styles.mainScreen}>
+        <div className={styles.mainScreen} id='mainScreen'>
             <div className={styles.topContainer}> Верх </div>
             <div className={styles.mainAndLeftContainer}>
                 <div className={styles.leftContainer}> Лево </div>

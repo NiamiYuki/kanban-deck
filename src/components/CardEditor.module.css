@@ -1,0 +1,52 @@
+.editorContainer{
+    height: 250px;
+    width: 300px;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 10px;
+}
+.cardEditorTextareaTitle, .cardEditorTextareaCardContent{
+    height: 50px;
+    width: 250px;
+    padding: 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(50, 104, 106);
+    border-radius: 4px;
+    word-wrap: break-word;
+    outline: none;
+    overflow: hidden;
+    resize: none;
+    outline: none;
+}
+.cardEditorTextareaCardContent{
+    height: 200px;
+}
+.editorButtonsContainer{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.editorButton{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px; 
+    background-color: cadetblue;
+    color: white;
+    margin-left: 5px;
+}
+
+.editorButton:hover{
+    background-color: white;
+    color:cadetblue;
+}

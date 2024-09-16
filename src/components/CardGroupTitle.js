@@ -2,6 +2,7 @@ import React, {useState} from "react";
 // import styles from '../containers/CardGroupView.module.css'
 import styles from './CardGroupTitle.module.css'
 
+
 function CardGroupTitle(props){
 
     const [isCardTitleChange, setIsCardTitleChange] = useState('true');
@@ -14,7 +15,6 @@ function CardGroupTitle(props){
     }
 
     const handleCardGroupTitleChange = (e, index)=>{
-        console.log(index);
         props.updateCardGroupTitle(index, e.target.value);
     }
 
