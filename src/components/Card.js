@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from '../containers/CardGroupView.module.css'
+import styles from './Card.module.css'
 import { FaPaw } from "react-icons/fa";
 
 function Card(props){
@@ -12,9 +12,12 @@ function Card(props){
     }
 
 return(
-    <div onMouseEnter={()=>handleIsCardAreaActive(true)}
-         onMouseLeave={()=>handleIsCardAreaActive(false)}>
-        <div key={props.index} className={styles.cardContainer}>
+    // <div >
+        <div 
+            key={props.index} 
+            className={styles.cardContainer}
+            onMouseEnter={()=>handleIsCardAreaActive(true)}
+            onMouseLeave={()=>handleIsCardAreaActive(false)}>
             <div className={styles.card}>
                 {props.card.cardTitle} 
             </div>
@@ -22,7 +25,7 @@ return(
                  <FaPaw/>
                 </button>}      
         </div> 
-    </div>
+    // </div>
 )
 }
 export default Card;

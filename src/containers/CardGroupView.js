@@ -92,10 +92,10 @@ function CardGroupView(){
 
                 </div>
                 <div  className={styles.cardList}>
-                <div>
-                    {cardList.map((card,index)=>(
-                    <Card index={index} card={card} cardList={[cardList]} handleCardRemove={handleCardRemove}/>))}
-                </div>
+                    <div className={styles.cardRow}>
+                        {cardList.map((card,index)=>(
+                        <Card index={index} card={card} cardList={[cardList]} handleCardRemove={handleCardRemove}/>))}
+                    </div>
                     <div className={styles.addCardGroup}>
                             <textarea
                                 type='text' 

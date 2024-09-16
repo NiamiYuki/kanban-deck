@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import styles from './CardGroupView.module.css'
-import { FaEdit } from "react-icons/fa";
+import styles from './Container.module.css'
+// import { FaEdit } from "react-icons/fa";
 
 import CardGroupView from './CardGroupView';
 function Container(){
@@ -18,18 +18,19 @@ function Container(){
             <div className={styles.topContainer}> Верх </div>
             <div className={styles.mainAndLeftContainer}>
                 <div className={styles.leftContainer}> Лево </div>
-                <div className={styles.rowsContainer}>
-                    {cardGroupList.map((cardGroup,index)=>(
-                    <CardGroupView  index={index} cardGroup={cardGroup} />))}
-                    <CardGroupView />
-                <button onClick={() => handleAddCardGroup()} className={styles.addCardGroupButton}>
-                    Добавить колонку
-                </button>
+                <div className={styles.rightContainer}>
+                    <div className={styles.rowsContainer} >
+                        <CardGroupView />
+                        {cardGroupList.map((cardGroup,index)=>(
+                        <CardGroupView  index={index} cardGroup={cardGroup} />))}
+                    <button onClick={() => handleAddCardGroup()} className={styles.addCardGroupButton}>
+                        Добавить колонку
+                    </button>
+                    </div>
+                  
                 </div>
             </div>
-        </div>
-
-        
+        </div>   
      )
 }
 
