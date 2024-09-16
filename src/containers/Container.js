@@ -5,10 +5,11 @@ import CardGroupView from './CardGroupView';
 function Container(){
 
     const [cardGroupList, setCardGroupList] = useState([{cardGroupTitle:'Название колонки'}]);
+    const [isCardToMove, setIsCardToMove] = useState(false);
     
     const handleAddCardGroup = ()=> {
        setCardGroupList([...cardGroupList, {cardGroupTitle:'Название колонки'}]);
-       console.log(cardGroupList);
+    //    console.log(cardGroupList);
     }
 
     const updateCardGroupTitle= (index, newTitle)=>{
@@ -26,6 +27,8 @@ function Container(){
                     <div className={styles.rowsContainer} >
                         {cardGroupList.map((cardGroup,index)=>(
                         <CardGroupView  
+                            isCardToMove={isCardToMove}
+                            setIsCardToMove={setIsCardToMove}
                             index={index} 
                             cardGroup={cardGroup}
                             updateCardGroupTitle={updateCardGroupTitle}

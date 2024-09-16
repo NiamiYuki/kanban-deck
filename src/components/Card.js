@@ -9,7 +9,6 @@ function Card(props){
 
     const handleIsCardAreaActive = (value) => {
         setIsActivCardArea(value);  
-        // console.log(isActiveCardArea);
     }
 
 
@@ -19,26 +18,29 @@ return(
             key={props.index} 
             className={styles.cardElement}
             onMouseEnter={()=>handleIsCardAreaActive(true)}
-            onMouseLeave={()=>handleIsCardAreaActive(false)}>
+            onMouseLeave={()=>handleIsCardAreaActive(false)}
+            >
             <div className={styles.card}>
                 {props.card.cardTitle} 
             </div>
 
             <div className={styles.cardDropdown}>
-                <div className={styles.dropContent}>
                     <div className={styles.cardMenu}>
                     <CardMenu
+                    isCardToMove={props.isCardToMove}
+                    setIsCardToMove={props.setIsCardToMove}
                     className={styles.moveCardTitleMenu}
-                    index={props.index} 
+                    cardIndex={props.cardIndex} 
                     card={props.card} 
                     cardList={props.cardList} 
                     cardGroup={props.cardGroup}
                     cardGroupList={props.cardGroupList}
                     isActiveCardArea={isActiveCardArea}
+                    handleIsCardAreaActive={handleIsCardAreaActive}
                     handleCardRemove={props.handleCardRemove}
+                    handleCardMove={props.handleCardMove}
                     /> 
-                    </div>
-                </div>
+            </div>
                 {isActiveCardArea && <div className={styles.cardMenu}></div>}  
             </div>
         </div> 

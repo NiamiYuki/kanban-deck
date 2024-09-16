@@ -13,7 +13,7 @@ import {
 
 function CardMenu(props){
 
-    const menuID = "menu-id";
+    const menuID = '' + Math.random();
 
     const [cardGroupTitleList, setCardGroupTitleList] = useState([]);
     const cardGroupList = props.cardGroupList;
@@ -25,10 +25,11 @@ function CardMenu(props){
 
 
     const handleAddCardGroupTitleToList=()=>{
-        console.log(props);
+        // console.log(props);
     }
 
     function displayMenu(e){
+        // props.handleIsCardAreaActive(!props.isActiveCardArea);
         // put whatever custom logic you need
         // you can even decide to not display the Menu
         show({
@@ -38,8 +39,8 @@ function CardMenu(props){
 
 
     return(
-        <div>
-            {props.isActiveCardArea &&<div onContextMenu={displayMenu} onClick={displayMenu}  >
+        <div className={styles.cardMenuContent}>
+            {props.isActiveCardArea &&<div onClick={displayMenu} className={styles.removeCardButton}  >
             <FaPaw/>
             </div>}
 
@@ -47,12 +48,12 @@ function CardMenu(props){
                 <Submenu label="Переместить карточку">
                     <div onMouseEnter={()=>handleAddCardGroupTitleToList()}>
                         {cardGroupList.map((cardGroup,index)=>
-                            <Item >
+                            <Item onClick={(e)=>props.handleCardMove(e)}>
                                 {cardGroup.cardGroupTitle}
                             </Item>)}
                     </div>
                 </Submenu>
-                <Item onClick={(e)=>props.handleCardRemove(e,props.index)}>Удалить карточку</Item>
+                <Item onClick={(e)=>props.handleCardRemove(e,props.cardIndex)}>Удалить карточку</Item>
             </Menu>
         </div>
     )

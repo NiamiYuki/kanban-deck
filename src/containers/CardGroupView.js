@@ -10,14 +10,20 @@ function CardGroupView(props){
 
     const [cardList, setCardList] = useState([]);
     const [newCard, setNewCard] = useState();
+    
 
     const handleCardRemove  = (e,index) => {
-        e.preventDefault();
+        // e.preventDefault();
         const newList = [...cardList];
         newList.splice(index, 1)
         setCardList(newList);  
-        // console.log(props.cardGroupList)   
+         
      }
+
+    const handleCardMove = () =>{
+        props.setIsCardToMove(true);
+        console.log(props.cardGroupList, props.index, props.isCardToMove, cardList);
+    }
 
     const handleCardAdd = (e, props) => {
         e.preventDefault();
@@ -39,7 +45,7 @@ function CardGroupView(props){
             <div className={styles.cardGroup}>
                 <div className={styles.cardTitleContainer}>
                     <CardGroupTitle 
-                        index={props.index} 
+                        cardGroupIndex={props.index} 
                         updateCardGroupTitle={props.updateCardGroupTitle}
                         cardGroup={props.cardGroup}
                         />
@@ -48,10 +54,14 @@ function CardGroupView(props){
                     <div className={styles.cardRow}>
                         {cardList.map((card,index)=>(
                         <Card 
-                            index={index} 
+                            isCardToMove={props.isCardToMove}
+                            setIsCardToMove={props.setIsCardToMove}
+                            cardGroupIndex={props.index} 
+                            cardIndex={index} 
                             card={card} 
                             cardList={[cardList]} 
                             handleCardRemove={handleCardRemove}
+                            handleCardMove={handleCardMove}
                             cardGroup={props.cardGroup}
                             cardGroupList={props.cardGroupList}
                         />))}
