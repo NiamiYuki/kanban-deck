@@ -69,3 +69,6 @@
 form{
     height: 100%;
 }
+.cardRow{
+   position: relative;
+}

@@ -4,10 +4,11 @@ import styles from './Container.module.css'
 import CardGroupView from './CardGroupView';
 function Container(){
 
-    const [cardGroupList, setCardGroupList] = useState([{cardGroupTitle:''}]);
+    const [cardGroupList, setCardGroupList] = useState([{cardGroupTitle:'Название колонки'}]);
     
     const handleAddCardGroup = ()=> {
-       setCardGroupList([...cardGroupList, {cardGroupTitle:''}]);
+       setCardGroupList([...cardGroupList, {cardGroupTitle:'Название колонки'}]);
+       console.log(cardGroupList);
     }
 
     const updateCardGroupTitle= (index, newTitle)=>{
@@ -28,8 +29,8 @@ function Container(){
                             index={index} 
                             cardGroup={cardGroup}
                             updateCardGroupTitle={updateCardGroupTitle}
-                            cardGroupTitle={cardGroup.cardGroupTitle}
- />))}
+                            cardGroupList={cardGroupList}
+                        />))}
                     <button onClick={() => handleAddCardGroup()} className={styles.addCardGroupButton}>
                         Добавить колонку
                     </button>

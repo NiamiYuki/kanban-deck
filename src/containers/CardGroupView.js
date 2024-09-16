@@ -10,28 +10,14 @@ function CardGroupView(props){
 
     const [cardList, setCardList] = useState([]);
     const [newCard, setNewCard] = useState();
-    // const [cardGroupTitle, setCardGroupTitle] = useState('');
-    // const [isCardTitleChange, setIsCardTitleChange] = useState('true');
-
-
-//     const handleCardGroupTitleAdd = (e)=>{
-//         if(e.key==="Enter"&&e.ctrlKey){
-//             setCardGroupTitle(e.target.value);
-//             setIsCardTitleChange(false);
-//             console.log(1);
-//         }
-//     }
-//     const handleCardGroupTitleChange = (e)=> {
-//         setCardGroupTitle(e.target.value);
-// }
-
 
     const handleCardRemove  = (e,index) => {
         e.preventDefault();
         const newList = [...cardList];
         newList.splice(index, 1)
         setCardList(newList);  
-    }
+        // console.log(props.cardGroupList)   
+     }
 
     const handleCardAdd = (e, props) => {
         e.preventDefault();
@@ -55,13 +41,20 @@ function CardGroupView(props){
                     <CardGroupTitle 
                         index={props.index} 
                         updateCardGroupTitle={props.updateCardGroupTitle}
-                        cardGroupTitle={props.cardGroupTitle}
+                        cardGroup={props.cardGroup}
                         />
                 </div>
                 <div  className={styles.cardList}>
                     <div className={styles.cardRow}>
                         {cardList.map((card,index)=>(
-                        <Card index={index} card={card} cardList={[cardList]} handleCardRemove={handleCardRemove}/>))}
+                        <Card 
+                            index={index} 
+                            card={card} 
+                            cardList={[cardList]} 
+                            handleCardRemove={handleCardRemove}
+                            cardGroup={props.cardGroup}
+                            cardGroupList={props.cardGroupList}
+                        />))}
                     </div>
                     <div className={styles.addCardGroup}>
                             <textarea

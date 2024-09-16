@@ -30,11 +30,55 @@
     margin-bottom: 5px;
     border-radius: 4px;
     position: relative;
+    display: inline-block;
     border: 2px solid white;
     top: 0;
     bottom: 0;
+    width: 100%;
+}
+.cardMenu{
+   position: relative; 
 }
 .cardContainer:hover{
     border: 2px solid cadetblue;
     border-radius: 5px;
+    width: 100%;
+}
+.cardMenu{
+    background-color: chocolate;
+}
+.dropContent{
+    /* display: none; */
+    position: absolute;
+    background-color: #f1f1f1;
+    /* min-width: 160px; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 7px;
+    top:25px;
+}
+.cardDropdown:hover .dropContent{
+    display: block;
+}
+.cardDropdown{
+    overflow: hidden;
+}
+.moveCardMenuHeader{
+    background-color: hotpink;
+    
+}
+.cardElement{
+    overflow: hidden;
+}
+.menuCardTitle{
+    border: solid 1px #f1f1f1;
+}
+.menuCardTitle:hover{
+    background-color:lightpink
+}
+.moveCardTitleMenu{
+    display: none;
+}
+.moveCardMenuHeader:hover .moveCardMenuHeader{
+    display: block;
 }

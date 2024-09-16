@@ -15,7 +15,7 @@ function CardGroupTitle(props){
 
     const handleCardGroupTitleChange = (e, index)=>{
         props.updateCardGroupTitle(index, e.target.value);
-        console.log(props.cardGroupTitle);
+        // console.log(props.cardGroup.cardGroupTitle);
     }
 
     const handleCardTitleEdit = (e)=>{
@@ -31,13 +31,13 @@ return(
             type='text'    
             name='listTitle' 
             placeholder='название списка'
-            value={props.cardGroupTitle}
+            value={props.cardGroup.cardGroupTitle}
             onChange={(e)=>handleCardGroupTitleChange(e, props.index)}
             onKeyDown={(e)=>handleCardGroupTitleAdd(e, props.index)}>
          </textarea>}
             {!isCardTitleChange && 
             <div className={styles.cardTitle}>
-                <div className={styles.cardTitleText}>{props.cardGroupTitle}</div>
+                <div className={styles.cardTitleText}>{props.cardGroup.cardGroupTitle}</div>
                 <button 
                     className={styles.cardTitleEditButton} 
                     onClick={(e)=>handleCardTitleEdit(e, props.index)}> 
