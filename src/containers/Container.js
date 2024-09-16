@@ -4,7 +4,7 @@ import styles from './Container.module.css'
 import CardGroupView from './CardGroupView';
 function Container(){
 
-    const [cardGroupList, setCardGroupList] = useState([{cardGroupTitle:'Название колонки', cardList:[]}]);
+    const [cardGroupList, setCardGroupList] = useState([{cardGroupTitle:'Ctrl+enter - сохранить название колонки', cardList:[]}]);
     const [, setState] = React.useState(false);
     
     const handleAddCardGroup = ()=> {
