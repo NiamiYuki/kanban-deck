@@ -1,5 +1,6 @@
 .cardTitleContainer{
     margin-bottom: 15px;
+    
 }
 .cardTitleTextarea{
     height: 35px;
@@ -7,13 +8,15 @@
     padding: 5px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid rgb(50, 104, 106);
+    border: 2px solid #05828f;
     border-radius: 4px;
     word-wrap: break-word;
     outline: none;
     overflow: hidden;
     resize: none;
     outline: none;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+
 }.cardTitleText{
     flex:1;
     align-items: center;
@@ -24,7 +27,7 @@
     width: 100%;
     align-items: center;
     word-wrap: break-word;
-    color:cadetblue;
+    color:#05828f;
     font-weight: bold;
 }
 .cardTitle{
@@ -41,10 +44,11 @@
     text-align: center;
     text-decoration: none;
     font-size: 12px;
-    background-color: cadetblue;
+    background-color: #05828f;
     color: white;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
 }
 .cardTitleEditButton:hover{
     background-color: white;
-    color:cadetblue;
+    color:#05828f;
 }

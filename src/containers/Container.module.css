@@ -2,18 +2,22 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
-    background-color: rgb(205, 90, 145);
+    background-color: #9ba9b9;
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 .topContainer{
-    background-color: deeppink;
+    /* background-color: #05828f; */
     flex: 0 0 50px;
+    /* border: 1px solid #9ba9b9; */
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
 }
 .leftContainer{
     flex: 0 0 100px;
-    background-color: chocolate;
+    /* background-color: #05828f; */
+    /* border: 1px solid #9ba9b9; */
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.2);
 }
 .mainAndLeftContainer{
     position: relative;
@@ -26,6 +30,7 @@
     position: relative;
     flex: 1 1 auto;
     height: 100%;
+    /* padding-top:10px ; */
 }
 .rowsContainer{
     display: flex;
@@ -36,6 +41,31 @@
     height: 100%;
     flex: 1 1 auto;
 }
+.rowsContainer::-webkit-scrollbar{
+    border-radius: 4px;
+    background-color: #9ba9b9;
+    margin-left: 2px;
+}
+.rowsContainer::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: white;
+  }
+
 .addCardGroupButton{
-    width: 70px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px; 
+    background-color: #05828f;
+    color: white;
+    margin-left:5px;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+}
+.addCardGroupButton:hover{
+    background-color: white;
+    color:#05828f;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
 }

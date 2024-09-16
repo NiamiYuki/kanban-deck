@@ -25,9 +25,9 @@ function Container(){
 
      return(
         <div className={styles.mainScreen} id='mainScreen'>
-            <div className={styles.topContainer}> Верх </div>
+            <div className={styles.topContainer}>  </div>
             <div className={styles.mainAndLeftContainer}>
-                <div className={styles.leftContainer}> Лево </div>
+                <div className={styles.leftContainer}> </div>
                 <div className={styles.rightContainer}>
                     <div className={styles.rowsContainer} >
                         {cardGroupList.map((cardGroup,index)=>(

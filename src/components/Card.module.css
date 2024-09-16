@@ -9,7 +9,7 @@
     border-radius: 2px;
 }
 .removeCardButton{
-    color: rgb(104, 38, 78);
+    color: #05828f;
     border: none;
     border-radius: 50%;
     background-color: transparent;
@@ -27,7 +27,7 @@
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background-color:cadetblue;
+    background-color:#05828f;
 }
 .cardContainer{
     margin-bottom: 5px;
@@ -38,6 +38,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
 }
 .cardMenu{
    position: absolute; 
@@ -45,12 +46,13 @@
        top: 0px;
 }
 .cardContainer:hover{
-    border: 2px solid cadetblue;
+    border: 2px solid #05828f;
     border-radius: 5px;
     width: 100%;
+    box-shadow: none;
 }
 .cardMenu{
-    background-color: chocolate;
+    background-color: #05828f;
 }
 .dropContent{
     /* display: none; */
@@ -69,7 +71,7 @@
     overflow: hidden;
 }
 .moveCardMenuHeader{
-    background-color: hotpink;
+    background-color: #05828f;
     
 }
 .cardElement{
@@ -79,7 +81,7 @@
     border: solid 1px #f1f1f1;
 }
 .menuCardTitle:hover{
-    background-color:lightpink
+    background-color:#05828f
 }
 .moveCardTitleMenu{
     display: none;
